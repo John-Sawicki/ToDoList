@@ -9,4 +9,5 @@ public class Task {
         this.description = description;
         this.color = color;
     }
+
 }
