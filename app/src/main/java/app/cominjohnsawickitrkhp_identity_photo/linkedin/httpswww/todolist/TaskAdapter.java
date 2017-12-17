@@ -36,11 +36,11 @@ public class TaskAdapter extends ArrayAdapter<Task> {
         EditText taskEditText = (EditText)convertView.findViewById(R.id.edit_task_description);
         taskEditText.setText(taskList.getDescription());
         */
-        TextView timeEditText = (TextView)convertView.findViewById(R.id.edit_due_date);
+        TextView timeEditText = (TextView)taskItemView.findViewById(R.id.edit_due_date);
         timeEditText.setText(taskList.getDate());
-        TextView categoryEditText = (TextView)convertView.findViewById(R.id.edit_category);
+        TextView categoryEditText = (TextView)taskItemView.findViewById(R.id.edit_category);
         categoryEditText.setText(taskList.getCategory());
-        TextView taskEditText = (TextView)convertView.findViewById(R.id.edit_task_description);
+        TextView taskEditText = (TextView)taskItemView.findViewById(R.id.edit_task_description);
         taskEditText.setText(taskList.getDescription());
         return taskItemView;
     }
