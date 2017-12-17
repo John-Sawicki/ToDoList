@@ -2,6 +2,9 @@ package app.cominjohnsawickitrkhp_identity_photo.linkedin.httpswww.todolist;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -9,5 +12,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ArrayList<Task> taskName = new ArrayList<Task>();
+        taskName.add(new Task("Dec. 25th", "Shopping", "buy gifts",0x2E7D32));
+        TaskAdapter adapter = new TaskAdapter(this, taskName);
+        ListView listView = (ListView)findViewById(R.id.listView);
+        listView.setAdapter(adapter);
+
     }
 }
