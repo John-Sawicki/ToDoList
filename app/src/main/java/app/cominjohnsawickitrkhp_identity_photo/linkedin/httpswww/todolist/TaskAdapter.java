@@ -24,24 +24,25 @@ public class TaskAdapter extends ArrayAdapter<Task> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View taskItemView = convertView;
         if(taskItemView == null){
-            //taskItemView = LayoutInflater.from(getContext()).inflate(R.layout.task_layout, parent,false);
-            taskItemView = LayoutInflater.from(getContext()).inflate(R.layout.task_text_only, parent,false);
+            taskItemView = LayoutInflater.from(getContext()).inflate(R.layout.task_layout, parent,false);
+            //taskItemView = LayoutInflater.from(getContext()).inflate(R.layout.task_text_only, parent,false);
         }
         Task taskList = getItem(position);
-        /*
-        EditText timeEditText = (EditText)convertView.findViewById(R.id.edit_due_date);
+
+        EditText timeEditText = (EditText)taskItemView.findViewById(R.id.edit_due_date);
         timeEditText.setText(taskList.getDate());
-        EditText categoryEditText = (EditText)convertView.findViewById(R.id.edit_category);
+        EditText categoryEditText = (EditText)taskItemView.findViewById(R.id.edit_category);
         categoryEditText.setText(taskList.getCategory());
-        EditText taskEditText = (EditText)convertView.findViewById(R.id.edit_task_description);
+        EditText taskEditText = (EditText)taskItemView.findViewById(R.id.edit_task_description);
         taskEditText.setText(taskList.getDescription());
-        */
+        /*
         TextView timeEditText = (TextView)taskItemView.findViewById(R.id.edit_due_date);
         timeEditText.setText(taskList.getDate());
         TextView categoryEditText = (TextView)taskItemView.findViewById(R.id.edit_category);
         categoryEditText.setText(taskList.getCategory());
         TextView taskEditText = (TextView)taskItemView.findViewById(R.id.edit_task_description);
         taskEditText.setText(taskList.getDescription());
+        */
         return taskItemView;
     }
 }
