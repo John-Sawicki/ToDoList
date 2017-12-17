@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -23,14 +24,23 @@ public class TaskAdapter extends ArrayAdapter<Task> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View taskItemView = convertView;
         if(taskItemView == null){
-            taskItemView = LayoutInflater.from(getContext()).inflate(R.layout.task_layout, parent,false);
+            //taskItemView = LayoutInflater.from(getContext()).inflate(R.layout.task_layout, parent,false);
+            taskItemView = LayoutInflater.from(getContext()).inflate(R.layout.task_text_only, parent,false);
         }
         Task taskList = getItem(position);
+        /*
         EditText timeEditText = (EditText)convertView.findViewById(R.id.edit_due_date);
         timeEditText.setText(taskList.getDate());
         EditText categoryEditText = (EditText)convertView.findViewById(R.id.edit_category);
         categoryEditText.setText(taskList.getCategory());
         EditText taskEditText = (EditText)convertView.findViewById(R.id.edit_task_description);
+        taskEditText.setText(taskList.getDescription());
+        */
+        TextView timeEditText = (TextView)convertView.findViewById(R.id.edit_due_date);
+        timeEditText.setText(taskList.getDate());
+        TextView categoryEditText = (TextView)convertView.findViewById(R.id.edit_category);
+        categoryEditText.setText(taskList.getCategory());
+        TextView taskEditText = (TextView)convertView.findViewById(R.id.edit_task_description);
         taskEditText.setText(taskList.getDescription());
         return taskItemView;
     }
